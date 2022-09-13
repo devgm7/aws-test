@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/bootstrap-5.2.1-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/bmi-calculator.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,300&family=Roboto+Mono:wght@100;400;500;700&display=swap"
+        rel="stylesheet">
+    <!-- JavaScript -->
+    <script src="js/bmi-calculator.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="bmi-left-pane col-9">
+                <div class="row">
+                    <div class="col">
+                        <div class="bmi-top-row">
+                            <div class="bmi-top-row-title">BMI Calculator</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bmi-left-pane-heading">Hi! Check your <br><b>Body Mass Index</b></div>
+                <div class="bmi-left-pane-inputs row">
+                    <div class="col">
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-text" id="inputGroup-sizing-lg">Height</span>
+                            <input type="text" id="bmi-left-pane-inputs-height" class="form-control"
+                                aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"
+                                placeholder="in centimeters" onblur="validate_input('height')">
+                        </div>
+                        <div class="bmi-left-pane-inputs-height_error" id="bmi-left-pane-inputs-height_error"></div>
+                    </div>
+                    <div class="col">
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-text" id="inputGroup-sizing-lg">Weight</span>
+                            <input type="text" id="bmi-left-pane-inputs-weight" class="form-control"
+                                aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"
+                                placeholder="in kilogram" onblur="validate_input('weight')">
+                        </div>
+                        <div class="bmi-left-pane-inputs-weight_error" id="bmi-left-pane-inputs-weight_error"></div>
+                    </div>
+                </div>
+                <button type="button" id="bmi-left-pane-button"
+                    class="bmi-left-pane-button btn btn-outline-primary btn-lg">Calculate</button>
+                <div class="bmi-left-pane-suggestions">
+                    <div class="bmi-left-pane-suggestions-text">
+                        <a href="https://www.ucsfhealth.org/education/tips-for-staying-healthy">[ Tips for Staying
+                            Healthy ]</a>
+                    </div>
+                </div>
+            </div>
+            <div class="bmi-right-pane col">
+                <div class="bmi-right-pane-card card">
+                    <div id="bmi-right-pane-card-bmi-result" class="bmi-right-pane-card-bmi-details"><h1>BMI</h1></div>
+                    <div id="bmi-right-pane-card-bmi-info" class="bmi-right-pane-card-bmi-details">
+                        <p>Less than 18.5 = Underweight <br>
+                            Between 18.5 - 24.9 = Healthy Weight <br>
+                            Between 25 - 29.9 = Overweight <br>
+                            Over 30 = Obese
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('bmi-left-pane-button').addEventListener('click', calculate_bmi, false)
+    </script>
+</body>
+
+</html>
